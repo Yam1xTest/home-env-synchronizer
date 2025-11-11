@@ -1,0 +1,15 @@
+name: build and push to dockerhub
+
+on:
+  push:
+    branches:
+      - master
+      - feature/*
+  pull_request:
+  workflow_call:
+
+jobs:
+  push_to_registry:
+    uses: TourmalineCore/home-github-workflows/.github/workflows/docker-build-and-push.yml@master
+    # without this it cannot login to the registry
+    secrets: inherit
