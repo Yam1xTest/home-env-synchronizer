@@ -16,7 +16,7 @@ jobs:
 
   trigger_home_env:
     needs: build
-    uses: TourmalineCore/home-github-workflows/.github/workflows/sync-env.yml@feature/add_sync_workflow
+    uses: ${{ github.repository_owner }}/home-github-workflows/.github/workflows/sync-env.yml@feature/add_sync_workflow
     with:
       # pelican-env is used to define which env will be synced
       target-env: home-env
